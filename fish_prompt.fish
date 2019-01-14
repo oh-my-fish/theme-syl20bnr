@@ -17,15 +17,15 @@ function toggle_right_prompt -d "Toggle the right prompt of the syl20bnr theme"
 end
 
 function __syl20bnr_git_branch_name -d "Return the current branch name"
-  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
 end
 
 function __syl20bnr_git_repo_name -d "Return the current repository name"
-  echo (command basename (git rev-parse --show-toplevel ^/dev/null))
+  echo (command basename (git rev-parse --show-toplevel 2> /dev/null))
 end
 
 function __syl20bnr_git_repo_base -d "Return the current repository name"
-  echo (command git rev-parse --show-toplevel ^/dev/null)
+  echo (command git rev-parse --show-toplevel 2> /dev/null)
 end
 
 function __syl20bnr_git_status -d "git status command"
