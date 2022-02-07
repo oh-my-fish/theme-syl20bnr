@@ -201,7 +201,7 @@ function fish_right_prompt -d "Write out the right prompt of the syl20bnr theme"
   # The where segment format is X@Y where:
   #   X is the username
   #   Y is the hostname
-  set -l ps_where $colnormal(whoami)@(hostname|cut -d . -f 1)
+  set -l ps_where $colnormal(whoami)@(hostnamectl hostname|cut -d . -f 1)
   
   # Right Prompt
 
